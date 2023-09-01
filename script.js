@@ -53,25 +53,32 @@ const phrases = [
         author: "Wayne Dyer"
     },
 ];
-
+botao.addEventListener("click", toggleScreen)
 botao.addEventListener("click", alterarFrase);
 
+botao.addEventListener('click', () => {
+    imagem.classList.add('.mostrar');
+});
+
 callPhrase.addEventListener("click", toggleScreen)
+callPhrase.addEventListener("click", alterarFrase)
 
 
 function alterarFrase() {
-
+ 
+  
     let randomNumber = Math.round(Math.random() * 10)
 
     elementoPhrase.textContent = phrases[randomNumber].title;
     elementoPhrase2.textContent = phrases[randomNumber].author;
     elementoPhrase3.textContent = phrases[randomNumber].phrases;
-
+   
 }
+
 function toggleScreen(event) {
     event.preventDefault()
 
-    alterarFrase()
     handleEvent.classList.toggle("hide")
     handleEvent2.classList.toggle("hide")
+
 }
